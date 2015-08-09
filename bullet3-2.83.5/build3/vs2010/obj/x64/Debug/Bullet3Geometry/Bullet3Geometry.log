@@ -1,0 +1,15 @@
+﻿Build started 08-08-2015 07:20:03 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3Geometry.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /Zi /nologo /W3 /WX- /Od /D _DEBUG=1 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /Gy /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Debug\Bullet3Geometry\\" /Fd"..\..\bin\Bullet3Geometry_vs2010_x64_debug.pdb" /Gd /TP /errorReport:prompt /MP ..\..\src\Bullet3Geometry\b3ConvexHullComputer.cpp ..\..\src\Bullet3Geometry\b3GeometryUtil.cpp
+         b3ConvexHullComputer.cpp
+         b3GeometryUtil.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\bin\Bullet3Geometry_vs2010_x64_debug.lib" /NOLOGO /MACHINE:X64 obj\x64\Debug\Bullet3Geometry\b3ConvexHullComputer.obj
+         obj\x64\Debug\Bullet3Geometry\b3GeometryUtil.obj
+         Bullet3Geometry.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\Bullet3Geometry_vs2010_x64_debug.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3Geometry.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.10

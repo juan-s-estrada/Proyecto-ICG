@@ -1,0 +1,20 @@
+﻿Build started 08-08-2015 07:37:57 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\App_BasicExample.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /nologo /W3 /WX- /Ox /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\App_BasicExample\\" /Fd"obj\x64\Release\App_BasicExample\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\examples\BasicDemo\BasicExample.cpp ..\..\examples\BasicDemo\main.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         BasicExample.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         main.cpp
+     1>c:\users\jazmina liz\desktop\proyecto-icg\bullet3-2.83.5\examples\basicdemo\../CommonInterfaces/CommonRigidBodyBase.h(165): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. (..\..\examples\BasicDemo\BasicExample.cpp)
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\App_BasicExample_vs2010_x64_release.exe" /INCREMENTAL:NO /NOLOGO ..\..\bin\BulletDynamics_vs2010_x64_release.lib ..\..\bin\BulletCollision_vs2010_x64_release.lib ..\..\bin\LinearMath_vs2010_x64_release.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"..\..\bin\App_BasicExample_vs2010_x64_release.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\bin\App_BasicExample_vs2010_x64_release.lib" /MACHINE:X64 obj\x64\Release\App_BasicExample\BasicExample.obj
+         obj\x64\Release\App_BasicExample\main.obj
+         App_BasicExample.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\App_BasicExample_vs2010_x64_release.exe
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\App_BasicExample.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:12.18

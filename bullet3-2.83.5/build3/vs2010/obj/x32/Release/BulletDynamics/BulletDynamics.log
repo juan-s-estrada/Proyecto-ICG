@@ -1,0 +1,41 @@
+﻿Build started 08-08-2015 08:56:49 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\BulletDynamics.vcxproj" on node 3 (Build target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\bin\BulletDynamics_vs2010.lib" /NOLOGO /MACHINE:X86 obj\x32\Release\BulletDynamics\btDiscreteDynamicsWorld.obj
+         obj\x32\Release\BulletDynamics\btRigidBody.obj
+         obj\x32\Release\BulletDynamics\btSimpleDynamicsWorld.obj
+         obj\x32\Release\BulletDynamics\btConeTwistConstraint.obj
+         obj\x32\Release\BulletDynamics\btContactConstraint.obj
+         obj\x32\Release\BulletDynamics\btFixedConstraint.obj
+         obj\x32\Release\BulletDynamics\btGearConstraint.obj
+         obj\x32\Release\BulletDynamics\btGeneric6DofConstraint.obj
+         obj\x32\Release\BulletDynamics\btGeneric6DofSpring2Constraint.obj
+         obj\x32\Release\BulletDynamics\btGeneric6DofSpringConstraint.obj
+         obj\x32\Release\BulletDynamics\btHinge2Constraint.obj
+         obj\x32\Release\BulletDynamics\btHingeConstraint.obj
+         obj\x32\Release\BulletDynamics\btNNCGConstraintSolver.obj
+         obj\x32\Release\BulletDynamics\btPoint2PointConstraint.obj
+         obj\x32\Release\BulletDynamics\btSequentialImpulseConstraintSolver.obj
+         obj\x32\Release\BulletDynamics\btSliderConstraint.obj
+         obj\x32\Release\BulletDynamics\btSolve2LinearConstraint.obj
+         obj\x32\Release\BulletDynamics\btTypedConstraint.obj
+         obj\x32\Release\BulletDynamics\btUniversalConstraint.obj
+         obj\x32\Release\BulletDynamics\btMultiBody.obj
+         obj\x32\Release\BulletDynamics\btMultiBodyConstraint.obj
+         obj\x32\Release\BulletDynamics\btMultiBodyConstraintSolver.obj
+         obj\x32\Release\BulletDynamics\btMultiBodyDynamicsWorld.obj
+         obj\x32\Release\BulletDynamics\btMultiBodyJointLimitConstraint.obj
+         obj\x32\Release\BulletDynamics\btMultiBodyJointMotor.obj
+         obj\x32\Release\BulletDynamics\btMultiBodyPoint2Point.obj
+         obj\x32\Release\BulletDynamics\btDantzigLCP.obj
+         obj\x32\Release\BulletDynamics\btLemkeAlgorithm.obj
+         obj\x32\Release\BulletDynamics\btMLCPSolver.obj
+         obj\x32\Release\BulletDynamics\btRaycastVehicle.obj
+         obj\x32\Release\BulletDynamics\btWheelInfo.obj
+         obj\x32\Release\BulletDynamics\btKinematicCharacterController.obj
+         BulletDynamics.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\BulletDynamics_vs2010.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\BulletDynamics.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.41

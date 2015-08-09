@@ -1,0 +1,105 @@
+﻿Build started 08-08-2015 08:56:48 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\BulletCollision.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\bin\BulletCollision_vs2010.lib" /NOLOGO /MACHINE:X86 obj\x32\Release\BulletCollision\btAxisSweep3.obj
+         obj\x32\Release\BulletCollision\btBroadphaseProxy.obj
+         obj\x32\Release\BulletCollision\btCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btDbvt.obj
+         obj\x32\Release\BulletCollision\btDbvtBroadphase.obj
+         obj\x32\Release\BulletCollision\btDispatcher.obj
+         obj\x32\Release\BulletCollision\btMultiSapBroadphase.obj
+         obj\x32\Release\BulletCollision\btOverlappingPairCache.obj
+         obj\x32\Release\BulletCollision\btQuantizedBvh.obj
+         obj\x32\Release\BulletCollision\btSimpleBroadphase.obj
+         obj\x32\Release\BulletCollision\btActivatingCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btBox2dBox2dCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btBoxBoxCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btBoxBoxDetector.obj
+         obj\x32\Release\BulletCollision\btCollisionDispatcher.obj
+         obj\x32\Release\BulletCollision\btCollisionObject.obj
+         obj\x32\Release\BulletCollision\btCollisionWorld.obj
+         obj\x32\Release\BulletCollision\btCollisionWorldImporter.obj
+         obj\x32\Release\BulletCollision\btCompoundCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btCompoundCompoundCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btConvex2dConvex2dAlgorithm.obj
+         obj\x32\Release\BulletCollision\btConvexConcaveCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btConvexConvexAlgorithm.obj
+         obj\x32\Release\BulletCollision\btConvexPlaneCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btDefaultCollisionConfiguration.obj
+         obj\x32\Release\BulletCollision\btEmptyCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btGhostObject.obj
+         obj\x32\Release\BulletCollision\btHashedSimplePairCache.obj
+         obj\x32\Release\BulletCollision\btInternalEdgeUtility.obj
+         obj\x32\Release\BulletCollision\btManifoldResult.obj
+         obj\x32\Release\BulletCollision\btSimulationIslandManager.obj
+         obj\x32\Release\BulletCollision\btSphereBoxCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btSphereSphereCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btSphereTriangleCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btUnionFind.obj
+         obj\x32\Release\BulletCollision\SphereTriangleDetector.obj
+         obj\x32\Release\BulletCollision\btBox2dShape.obj
+         obj\x32\Release\BulletCollision\btBoxShape.obj
+         obj\x32\Release\BulletCollision\btBvhTriangleMeshShape.obj
+         obj\x32\Release\BulletCollision\btCapsuleShape.obj
+         obj\x32\Release\BulletCollision\btCollisionShape.obj
+         obj\x32\Release\BulletCollision\btCompoundShape.obj
+         obj\x32\Release\BulletCollision\btConcaveShape.obj
+         obj\x32\Release\BulletCollision\btConeShape.obj
+         obj\x32\Release\BulletCollision\btConvex2dShape.obj
+         obj\x32\Release\BulletCollision\btConvexHullShape.obj
+         obj\x32\Release\BulletCollision\btConvexInternalShape.obj
+         obj\x32\Release\BulletCollision\btConvexPointCloudShape.obj
+         obj\x32\Release\BulletCollision\btConvexPolyhedron.obj
+         obj\x32\Release\BulletCollision\btConvexShape.obj
+         obj\x32\Release\BulletCollision\btConvexTriangleMeshShape.obj
+         obj\x32\Release\BulletCollision\btCylinderShape.obj
+         obj\x32\Release\BulletCollision\btEmptyShape.obj
+         obj\x32\Release\BulletCollision\btHeightfieldTerrainShape.obj
+         obj\x32\Release\BulletCollision\btMinkowskiSumShape.obj
+         obj\x32\Release\BulletCollision\btMultimaterialTriangleMeshShape.obj
+         obj\x32\Release\BulletCollision\btMultiSphereShape.obj
+         obj\x32\Release\BulletCollision\btOptimizedBvh.obj
+         obj\x32\Release\BulletCollision\btPolyhedralConvexShape.obj
+         obj\x32\Release\BulletCollision\btScaledBvhTriangleMeshShape.obj
+         obj\x32\Release\BulletCollision\btShapeHull.obj
+         obj\x32\Release\BulletCollision\btSphereShape.obj
+         obj\x32\Release\BulletCollision\btStaticPlaneShape.obj
+         obj\x32\Release\BulletCollision\btStridingMeshInterface.obj
+         obj\x32\Release\BulletCollision\btTetrahedronShape.obj
+         obj\x32\Release\BulletCollision\btTriangleBuffer.obj
+         obj\x32\Release\BulletCollision\btTriangleCallback.obj
+         obj\x32\Release\BulletCollision\btTriangleIndexVertexArray.obj
+         obj\x32\Release\BulletCollision\btTriangleIndexVertexMaterialArray.obj
+         obj\x32\Release\BulletCollision\btTriangleMesh.obj
+         obj\x32\Release\BulletCollision\btTriangleMeshShape.obj
+         obj\x32\Release\BulletCollision\btUniformScalingShape.obj
+         obj\x32\Release\BulletCollision\btContactProcessing.obj
+         obj\x32\Release\BulletCollision\btGenericPoolAllocator.obj
+         obj\x32\Release\BulletCollision\btGImpactBvh.obj
+         obj\x32\Release\BulletCollision\btGImpactCollisionAlgorithm.obj
+         obj\x32\Release\BulletCollision\btGImpactQuantizedBvh.obj
+         obj\x32\Release\BulletCollision\btGImpactShape.obj
+         obj\x32\Release\BulletCollision\btTriangleShapeEx.obj
+         obj\x32\Release\BulletCollision\gim_box_set.obj
+         obj\x32\Release\BulletCollision\gim_contact.obj
+         obj\x32\Release\BulletCollision\gim_memory.obj
+         obj\x32\Release\BulletCollision\gim_tri_collision.obj
+         obj\x32\Release\BulletCollision\btContinuousConvexCollision.obj
+         obj\x32\Release\BulletCollision\btConvexCast.obj
+         obj\x32\Release\BulletCollision\btGjkConvexCast.obj
+         obj\x32\Release\BulletCollision\btGjkEpa2.obj
+         obj\x32\Release\BulletCollision\btGjkEpaPenetrationDepthSolver.obj
+         obj\x32\Release\BulletCollision\btGjkPairDetector.obj
+         obj\x32\Release\BulletCollision\btMinkowskiPenetrationDepthSolver.obj
+         obj\x32\Release\BulletCollision\btPersistentManifold.obj
+         obj\x32\Release\BulletCollision\btPolyhedralContactClipping.obj
+         obj\x32\Release\BulletCollision\btRaycastCallback.obj
+         obj\x32\Release\BulletCollision\btSubSimplexConvexCast.obj
+         obj\x32\Release\BulletCollision\btVoronoiSimplexSolver.obj
+     1>btBroadphaseProxy.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+         BulletCollision.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\BulletCollision_vs2010.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\BulletCollision.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.93

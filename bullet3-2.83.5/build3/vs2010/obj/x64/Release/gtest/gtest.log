@@ -1,0 +1,14 @@
+﻿Build started 08-08-2015 07:33:36 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\gtest.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\test\gtest-1.7.0" /I"..\..\test\gtest-1.7.0\include" /nologo /W3 /WX- /Ox /D _VARIADIC_MAX=10 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\gtest\\" /Fd"obj\x64\Release\gtest\vc120.pdb" /Gd /TP /errorReport:prompt /MP "..\..\test\gtest-1.7.0\src\gtest-all.cc"
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         gtest-all.cc
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\bin\gtest_vs2010_x64_release.lib" /NOLOGO /MACHINE:X64 "obj\x64\Release\gtest\gtest-all.obj"
+         gtest.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\gtest_vs2010_x64_release.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\gtest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:28.68

@@ -1,0 +1,36 @@
+﻿Build started 08-08-2015 07:36:06 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Test_BulletCollision.vcxproj" on node 4 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\test\collision /I..\..\src /I"..\..\test\gtest-1.7.0\include" /nologo /W3 /WX- /Ox /D _VARIADIC_MAX=10 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\Test_BulletCollision\\" /Fd"obj\x64\Release\Test_BulletCollision\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\test\collision\main.cpp ..\..\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.cpp ..\..\src\BulletCollision\CollisionShapes\btSphereShape.cpp ..\..\src\BulletCollision\CollisionShapes\btMultiSphereShape.cpp ..\..\src\BulletCollision\CollisionShapes\btPolyhedralConvexShape.cpp ..\..\src\BulletCollision\CollisionShapes\btConvexShape.cpp ..\..\src\BulletCollision\CollisionShapes\btConvexInternalShape.cpp ..\..\src\BulletCollision\CollisionShapes\btCollisionShape.cpp ..\..\src\BulletCollision\CollisionShapes\btConvexPolyhedron.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         main.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btVoronoiSimplexSolver.cpp
+         btSphereShape.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btMultiSphereShape.cpp
+         btPolyhedralConvexShape.cpp
+         btConvexShape.cpp
+         btConvexInternalShape.cpp
+     1>..\..\src\BulletCollision/NarrowPhaseCollision/btMprPenetration.h(566): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\test\collision\main.cpp)
+     1>..\..\src\BulletCollision/NarrowPhaseCollision/btMprPenetration.h(570): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\test\collision\main.cpp)
+         btCollisionShape.cpp
+         btConvexPolyhedron.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\Test_BulletCollision_vs2010_x64_release.exe" /INCREMENTAL:NO /NOLOGO ..\..\bin\LinearMath_vs2010_x64_release.lib ..\..\bin\gtest_vs2010_x64_release.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"..\..\bin\Test_BulletCollision_vs2010_x64_release.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\bin\Test_BulletCollision_vs2010_x64_release.lib" /MACHINE:X64 obj\x64\Release\Test_BulletCollision\main.obj
+         obj\x64\Release\Test_BulletCollision\btVoronoiSimplexSolver.obj
+         obj\x64\Release\Test_BulletCollision\btSphereShape.obj
+         obj\x64\Release\Test_BulletCollision\btMultiSphereShape.obj
+         obj\x64\Release\Test_BulletCollision\btPolyhedralConvexShape.obj
+         obj\x64\Release\Test_BulletCollision\btConvexShape.obj
+         obj\x64\Release\Test_BulletCollision\btConvexInternalShape.obj
+         obj\x64\Release\Test_BulletCollision\btCollisionShape.obj
+         obj\x64\Release\Test_BulletCollision\btConvexPolyhedron.obj
+         Test_BulletCollision.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\Test_BulletCollision_vs2010_x64_release.exe
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Test_BulletCollision.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.39

@@ -1,0 +1,22 @@
+﻿Build started 08-08-2015 08:58:41 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\TareaIV.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.exe" /NOLOGO /LIBPATH:..\lib opengl32.lib glfw3.lib glu32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.lib" /MACHINE:X86 /SAFESEH Release\GLSLProgram.obj
+         Release\main.obj
+         Release\mesh.obj
+         Release\objReader.obj
+         Release\offReader.obj
+         Release\Triangle.obj
+         Release\Vertices.obj
+         "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\bin\BulletCollision_vs2010.lib"
+         "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\bin\BulletDynamics_vs2010.lib"
+         "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\bin\LinearMath_vs2010.lib"
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Generating code
+         Finished generating code
+         TareaIV.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.exe
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\TareaIV.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.05

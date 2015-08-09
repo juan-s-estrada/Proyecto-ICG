@@ -1,0 +1,32 @@
+﻿Build started 08-08-2015 07:33:16 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3Collision.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /nologo /W3 /WX- /Ox /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\Bullet3Collision\\" /Fd"obj\x64\Release\Bullet3Collision\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\src\Bullet3Collision\BroadPhaseCollision\b3DynamicBvh.cpp ..\..\src\Bullet3Collision\BroadPhaseCollision\b3DynamicBvhBroadphase.cpp ..\..\src\Bullet3Collision\BroadPhaseCollision\b3OverlappingPairCache.cpp ..\..\src\Bullet3Collision\NarrowPhaseCollision\b3ConvexUtility.cpp ..\..\src\Bullet3Collision\NarrowPhaseCollision\b3CpuNarrowPhase.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3DynamicBvh.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3DynamicBvhBroadphase.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3OverlappingPairCache.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3ConvexUtility.cpp
+     1>..\..\src\Bullet3Collision/BroadPhaseCollision/b3DynamicBvh.h(968): warning C4101: 'resultNormal' : unreferenced local variable (..\..\src\Bullet3Collision\BroadPhaseCollision\b3DynamicBvhBroadphase.cpp)
+                 ..\..\src\Bullet3Collision\BroadPhaseCollision\b3DynamicBvhBroadphase.cpp(249) : see reference to function template instantiation 'void b3DynamicBvh::rayTestInternal<BroadphaseRayTester>(const b3DbvtNode *,const b3Vector3 &,const b3Vector3 &,const b3Vector3 &,unsigned int [],b3Scalar,const b3Vector3 &,const b3Vector3 &,T &) const' being compiled
+                 with
+                 [
+                     T=BroadphaseRayTester
+                 ]
+         b3CpuNarrowPhase.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\bin\Bullet3Collision_vs2010_x64_release.lib" /NOLOGO /MACHINE:X64 obj\x64\Release\Bullet3Collision\b3DynamicBvh.obj
+         obj\x64\Release\Bullet3Collision\b3DynamicBvhBroadphase.obj
+         obj\x64\Release\Bullet3Collision\b3OverlappingPairCache.obj
+         obj\x64\Release\Bullet3Collision\b3ConvexUtility.obj
+         obj\x64\Release\Bullet3Collision\b3CpuNarrowPhase.obj
+         Bullet3Collision.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\Bullet3Collision_vs2010_x64_release.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3Collision.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.27

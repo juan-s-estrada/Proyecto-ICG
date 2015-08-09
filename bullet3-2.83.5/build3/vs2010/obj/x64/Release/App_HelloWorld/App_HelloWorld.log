@@ -1,0 +1,14 @@
+﻿Build started 08-08-2015 07:37:57 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\App_HelloWorld.vcxproj" on node 4 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /nologo /W3 /WX- /Ox /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\App_HelloWorld\\" /Fd"obj\x64\Release\App_HelloWorld\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\examples\HelloWorld\HelloWorld.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         HelloWorld.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\App_HelloWorld_vs2010_x64_release.exe" /INCREMENTAL:NO /NOLOGO ..\..\bin\BulletDynamics_vs2010_x64_release.lib ..\..\bin\BulletCollision_vs2010_x64_release.lib ..\..\bin\LinearMath_vs2010_x64_release.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"..\..\bin\App_HelloWorld_vs2010_x64_release.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\bin\App_HelloWorld_vs2010_x64_release.lib" /MACHINE:X64 obj\x64\Release\App_HelloWorld\HelloWorld.obj
+         App_HelloWorld.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\App_HelloWorld_vs2010_x64_release.exe
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\App_HelloWorld.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.61

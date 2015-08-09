@@ -1,0 +1,57 @@
+﻿Build started 08-08-2015 07:34:05 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\BulletSoftBody.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /nologo /W3 /WX- /Ox /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\BulletSoftBody\\" /Fd"obj\x64\Release\BulletSoftBody\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\src\BulletSoftBody\btDefaultSoftBodySolver.cpp ..\..\src\BulletSoftBody\btSoftBody.cpp ..\..\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp ..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp ..\..\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp ..\..\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp ..\..\src\BulletSoftBody\btSoftRigidDynamicsWorld.cpp ..\..\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btDefaultSoftBodySolver.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btSoftBody.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btSoftBodyConcaveCollisionAlgorithm.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btSoftBodyHelpers.cpp
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(444): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(445): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(449): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(450): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(572): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(573): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(1128): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(1129): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(1138): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(1184): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
+     1>..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp(1195): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : see declaration of 'sscanf'
+         btSoftBodyRigidBodyCollisionConfiguration.cpp
+     1>..\..\src\BulletSoftBody\btSoftBody.cpp(3340): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
+     1>..\..\src\BulletSoftBody\btSoftBody.cpp(3341): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
+     1>..\..\src\BulletSoftBody\btSoftBody.cpp(3365): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
+     1>..\..\src\BulletSoftBody\btSoftBody.cpp(3386): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
+     1>..\..\src\BulletSoftBody\btSoftBody.cpp(3410): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
+         btSoftRigidCollisionAlgorithm.cpp
+         btSoftRigidDynamicsWorld.cpp
+         btSoftSoftCollisionAlgorithm.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\lib\BulletSoftBody_vs2010_x64_release.lib" /NOLOGO /MACHINE:X64 obj\x64\Release\BulletSoftBody\btDefaultSoftBodySolver.obj
+         obj\x64\Release\BulletSoftBody\btSoftBody.obj
+         obj\x64\Release\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.obj
+         obj\x64\Release\BulletSoftBody\btSoftBodyHelpers.obj
+         obj\x64\Release\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.obj
+         obj\x64\Release\BulletSoftBody\btSoftRigidCollisionAlgorithm.obj
+         obj\x64\Release\BulletSoftBody\btSoftRigidDynamicsWorld.obj
+         obj\x64\Release\BulletSoftBody\btSoftSoftCollisionAlgorithm.obj
+         BulletSoftBody.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\lib\BulletSoftBody_vs2010_x64_release.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\BulletSoftBody.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:30.69

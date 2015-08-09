@@ -1,0 +1,199 @@
+﻿Build started 08-08-2015 07:20:24 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3OpenCL_clew.vcxproj" on node 4 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src\clew /I..\..\src\Bullet3OpenCL /I..\..\src /Zi /nologo /W3 /WX- /Od /D _DEBUG=1 /D B3_USE_CLEW /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /Gy /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Debug\Bullet3OpenCL_clew\\" /Fd"..\..\lib\Bullet3OpenCL_clew_vs2010_x64_debug.pdb" /Gd /TC /errorReport:prompt /MP ..\..\src\clew\clew.c
+         clew.c
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src\clew /I..\..\src\Bullet3OpenCL /I..\..\src /Zi /nologo /W3 /WX- /Od /D _DEBUG=1 /D B3_USE_CLEW /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /Gy /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Debug\Bullet3OpenCL_clew\\" /Fd"..\..\lib\Bullet3OpenCL_clew_vs2010_x64_debug.pdb" /Gd /TP /errorReport:prompt /MP ..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp ..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp ..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvhBroadphase.cpp ..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuSapBroadphase.cpp ..\..\src\Bullet3OpenCL\Initialize\b3OpenCLUtils.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ContactCache.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3GjkEpa.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3GjkPairDetector.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3OptimizedBvh.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3QuantizedBvh.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3StridingMeshInterface.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3TriangleCallback.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3TriangleIndexVertexArray.cpp ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3VoronoiSimplexSolver.cpp ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3BoundSearchCL.cpp ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3FillCL.cpp ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3LauncherCL.cpp ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3PrefixScanCL.cpp ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3PrefixScanFloat4CL.cpp ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3RadixSort32CL.cpp ..\..\src\Bullet3OpenCL\Raycast\b3GpuRaycast.cpp ..\..\src\Bullet3OpenCL\RigidBody\b3GpuGenericConstraint.cpp ..\..\src\Bullet3OpenCL\RigidBody\b3GpuJacobiContactSolver.cpp ..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp ..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsConstraintSolver.cpp ..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsContactSolver.cpp ..\..\src\Bullet3OpenCL\RigidBody\b3GpuRigidBodyPipeline.cpp ..\..\src\Bullet3OpenCL\RigidBody\b3Solver.cpp
+         b3GpuGridBroadphase.cpp
+         b3GpuParallelLinearBvh.cpp
+         b3GpuParallelLinearBvhBroadphase.cpp
+         b3GpuSapBroadphase.cpp
+     1>c:\users\jazmina liz\desktop\proyecto-icg\bullet3-2.83.5\src\bullet3opencl\broadphasecollision\b3GpuParallelLinearBvhBroadphase.h(48): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvhBroadphase.cpp)
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(114): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(115): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(294): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp(161): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp(168): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp(280): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp(355): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(305): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(330): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(335): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3SapAabb>::copyToHost(b3AlignedObjectArray<b3SapAabb> &,bool) const'
+                 ..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp(305) : see reference to function template instantiation 'void b3OpenCLArray<b3SapAabb>::copyToHost(b3AlignedObjectArray<b3SapAabb> &,bool) const' being compiled
+                 c:\users\jazmina liz\desktop\proyecto-icg\bullet3-2.83.5\src\bullet3opencl\broadphasecollision\b3GpuGridBroadphase.h(32) : see reference to class template instantiation 'b3OpenCLArray<b3SapAabb>' being compiled
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(376): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(377): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(412): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp(449): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuSapBroadphase.cpp(1123): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuSapBroadphase.cpp(1304): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuSapBroadphase.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3Int4>::copyToHost(b3AlignedObjectArray<T> &,bool) const'
+                 with
+                 [
+                     T=b3Int4
+                 ]
+                 ..\..\src\Bullet3OpenCL\BroadphaseCollision\b3GpuSapBroadphase.cpp(273) : see reference to function template instantiation 'void b3OpenCLArray<b3Int4>::copyToHost(b3AlignedObjectArray<T> &,bool) const' being compiled
+                 with
+                 [
+                     T=b3Int4
+                 ]
+                 c:\users\jazmina liz\desktop\proyecto-icg\bullet3-2.83.5\src\bullet3opencl\broadphasecollision\b3GpuSapBroadphase.h(49) : see reference to class template instantiation 'b3OpenCLArray<b3Int4>' being compiled
+         b3OpenCLUtils.cpp
+         b3ContactCache.cpp
+         b3ConvexHullContact.cpp
+         b3GjkEpa.cpp
+         b3GjkPairDetector.cpp
+     1>..\..\src\Bullet3OpenCL\Initialize\b3OpenCLUtils.cpp(786): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\Initialize\b3OpenCLUtils.cpp(865): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\Initialize\b3OpenCLUtils.cpp(893): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3Collision/NarrowPhaseCollision/shared/b3MprPenetration.h(603): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp)
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3Collision/NarrowPhaseCollision/shared/b3MprPenetration.h(607): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp)
+         b3OptimizedBvh.cpp
+         b3QuantizedBvh.cpp
+         b3StridingMeshInterface.cpp
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3Collision/NarrowPhaseCollision/shared/b3NewContactReduction.h(155): warning C4244: '=' : conversion from 'float' to 'unsigned short', possible loss of data (..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp)
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3Collision/NarrowPhaseCollision/shared/b3NewContactReduction.h(182): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data (..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp)
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(695): warning C4101: 'edgeBend' : unreferenced local variable
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(695): warning C4101: 'edgeAend' : unreferenced local variable
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(695): warning C4101: 'edgeAstart' : unreferenced local variable
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(695): warning C4101: 'edgeBstart' : unreferenced local variable
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(1295): warning C4101: 'centerOut' : unreferenced local variable
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(2106): warning C4244: '=' : conversion from 'float' to 'unsigned short', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(2781): warning C4101: 'contactsOut' : unreferenced local variable
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3QuantizedBvh.cpp(622): warning C4101: 'normal' : unreferenced local variable
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4135): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4136): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4137): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4138): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4283): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4439): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4563): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(4820): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3Vector3>::copyToHost(b3AlignedObjectArray<T> &,bool) const'
+                 with
+                 [
+                     T=b3Vector3
+                 ]
+                 ..\..\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp(3315) : see reference to function template instantiation 'void b3OpenCLArray<b3Vector3>::copyToHost(b3AlignedObjectArray<T> &,bool) const' being compiled
+                 with
+                 [
+                     T=b3Vector3
+                 ]
+                 c:\users\jazmina liz\desktop\proyecto-icg\bullet3-2.83.5\src\bullet3opencl\narrowphasecollision\b3ConvexHullContact.h(62) : see reference to class template instantiation 'b3OpenCLArray<b3Vector3>' being compiled
+         b3TriangleCallback.cpp
+         b3TriangleIndexVertexArray.cpp
+         b3VoronoiSimplexSolver.cpp
+         b3BoundSearchCL.cpp
+         b3FillCL.cpp
+         b3LauncherCL.cpp
+         b3PrefixScanCL.cpp
+     1>..\..\src\Bullet3OpenCL\ParallelPrimitives\b3LauncherCL.cpp(57): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\ParallelPrimitives\b3LauncherCL.cpp(61): warning C4267: '+=' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\ParallelPrimitives\b3LauncherCL.cpp(91): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\ParallelPrimitives\b3LauncherCL.cpp(95): warning C4267: '+=' : conversion from 'size_t' to 'int', possible loss of data
+         b3PrefixScanFloat4CL.cpp
+         b3RadixSort32CL.cpp
+         b3GpuRaycast.cpp
+         b3GpuGenericConstraint.cpp
+     1>..\..\src\Bullet3OpenCL\ParallelPrimitives\b3RadixSort32CL.cpp(189): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\ParallelPrimitives\b3RadixSort32CL.cpp(569): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>c:\users\jazmina liz\desktop\proyecto-icg\bullet3-2.83.5\src\bullet3opencl\parallelprimitives\b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\ParallelPrimitives\b3RadixSort32CL.cpp)
+                 c:\users\jazmina liz\desktop\proyecto-icg\bullet3-2.83.5\src\bullet3opencl\parallelprimitives\b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3SortData>::copyToHost(b3AlignedObjectArray<b3SortData> &,bool) const'
+                 ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3RadixSort32CL.cpp(169) : see reference to function template instantiation 'void b3OpenCLArray<b3SortData>::copyToHost(b3AlignedObjectArray<b3SortData> &,bool) const' being compiled
+                 ..\..\src\Bullet3OpenCL\ParallelPrimitives\b3RadixSort32CL.cpp(21) : see reference to class template instantiation 'b3OpenCLArray<b3SortData>' being compiled
+         b3GpuJacobiContactSolver.cpp
+         b3GpuNarrowPhase.cpp
+         b3GpuPgsConstraintSolver.cpp
+     1>..\..\src\Bullet3OpenCL\Raycast\b3GpuRaycast.cpp(316): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\Raycast\b3GpuRaycast.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3RayHit>::copyToHost(b3AlignedObjectArray<b3RayHit> &,bool) const'
+                 ..\..\src\Bullet3OpenCL\Raycast\b3GpuRaycast.cpp(388) : see reference to function template instantiation 'void b3OpenCLArray<b3RayHit>::copyToHost(b3AlignedObjectArray<b3RayHit> &,bool) const' being compiled
+                 ..\..\src\Bullet3OpenCL\Raycast\b3GpuRaycast.cpp(64) : see reference to class template instantiation 'b3OpenCLArray<b3RayHit>' being compiled
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuJacobiContactSolver.cpp(565): warning C4018: '<' : signed/unsigned mismatch
+         b3GpuPgsContactSolver.cpp
+         b3GpuRigidBodyPipeline.cpp
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp(751): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp(761): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp(803): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp(812): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp(835): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3Contact4>::copyToHost(b3AlignedObjectArray<b3Contact4> &,bool) const'
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp(821) : see reference to function template instantiation 'void b3OpenCLArray<b3Contact4>::copyToHost(b3AlignedObjectArray<b3Contact4> &,bool) const' being compiled
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp(54) : see reference to class template instantiation 'b3OpenCLArray<b3Contact4>' being compiled
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsConstraintSolver.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<unsigned int>::copyToHost(b3AlignedObjectArray<unsigned int> &,bool) const'
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsConstraintSolver.cpp(730) : see reference to function template instantiation 'void b3OpenCLArray<unsigned int>::copyToHost(b3AlignedObjectArray<unsigned int> &,bool) const' being compiled
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsConstraintSolver.cpp(132) : see reference to class template instantiation 'b3OpenCLArray<unsigned int>' being compiled
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsContactSolver.cpp(752): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsContactSolver.cpp(923): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsContactSolver.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3RigidBodyData>::copyToHost(b3AlignedObjectArray<T> &,bool) const'
+                 with
+                 [
+                     T=b3RigidBodyData
+                 ]
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsContactSolver.cpp(861) : see reference to function template instantiation 'void b3OpenCLArray<b3RigidBodyData>::copyToHost(b3AlignedObjectArray<T> &,bool) const' being compiled
+                 with
+                 [
+                     T=b3RigidBodyData
+                 ]
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuPgsContactSolver.cpp(114) : see reference to class template instantiation 'b3OpenCLArray<b3RigidBodyData>' being compiled
+         b3Solver.cpp
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\RigidBody\b3GpuRigidBodyPipeline.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3SapAabb>::copyToHost(b3AlignedObjectArray<b3SapAabb> &,bool) const'
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuRigidBodyPipeline.cpp(248) : see reference to function template instantiation 'void b3OpenCLArray<b3SapAabb>::copyToHost(b3AlignedObjectArray<b3SapAabb> &,bool) const' being compiled
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3GpuRigidBodyPipeline.cpp(78) : see reference to class template instantiation 'b3OpenCLArray<b3SapAabb>' being compiled
+     1>C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(269): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data (..\..\src\Bullet3OpenCL\RigidBody\b3Solver.cpp)
+                 C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\src\Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h(268) : while compiling class template member function 'void b3OpenCLArray<b3Contact4>::copyToHost(b3AlignedObjectArray<T> &,bool) const'
+                 with
+                 [
+                     T=b3Contact4
+                 ]
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3Solver.cpp(960) : see reference to function template instantiation 'void b3OpenCLArray<b3Contact4>::copyToHost(b3AlignedObjectArray<T> &,bool) const' being compiled
+                 with
+                 [
+                     T=b3Contact4
+                 ]
+                 ..\..\src\Bullet3OpenCL\RigidBody\b3Solver.cpp(103) : see reference to class template instantiation 'b3OpenCLArray<b3Contact4>' being compiled
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\lib\Bullet3OpenCL_clew_vs2010_x64_debug.lib" /NOLOGO /MACHINE:X64 obj\x64\Debug\Bullet3OpenCL_clew\clew.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuGridBroadphase.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuParallelLinearBvh.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuParallelLinearBvhBroadphase.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuSapBroadphase.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3OpenCLUtils.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3ContactCache.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3ConvexHullContact.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GjkEpa.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GjkPairDetector.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3OptimizedBvh.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3QuantizedBvh.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3StridingMeshInterface.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3TriangleCallback.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3TriangleIndexVertexArray.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3VoronoiSimplexSolver.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3BoundSearchCL.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3FillCL.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3LauncherCL.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3PrefixScanCL.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3PrefixScanFloat4CL.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3RadixSort32CL.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuRaycast.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuGenericConstraint.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuJacobiContactSolver.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuNarrowPhase.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuPgsConstraintSolver.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuPgsContactSolver.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3GpuRigidBodyPipeline.obj
+         obj\x64\Debug\Bullet3OpenCL_clew\b3Solver.obj
+         Bullet3OpenCL_clew.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\lib\Bullet3OpenCL_clew_vs2010_x64_debug.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3OpenCL_clew.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:31.58

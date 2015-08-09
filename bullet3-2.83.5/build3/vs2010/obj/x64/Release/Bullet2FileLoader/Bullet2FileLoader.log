@@ -1,0 +1,36 @@
+﻿Build started 08-08-2015 07:36:00 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet2FileLoader.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /nologo /W3 /WX- /Ox /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\Bullet2FileLoader\\" /Fd"obj\x64\Release\Bullet2FileLoader\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\src\Bullet3Serialize\Bullet2FileLoader\b3BulletFile.cpp ..\..\src\Bullet3Serialize\Bullet2FileLoader\b3Chunk.cpp ..\..\src\Bullet3Serialize\Bullet2FileLoader\b3DNA.cpp ..\..\src\Bullet3Serialize\Bullet2FileLoader\b3File.cpp ..\..\src\Bullet3Serialize\Bullet2FileLoader\b3Serializer.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3BulletFile.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3Chunk.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3DNA.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3File.cpp
+     1>..\..\src\Bullet3Serialize\Bullet2FileLoader\b3BulletFile.cpp(359): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>..\..\src\Bullet3Serialize\Bullet2FileLoader\b3DNA.cpp(278): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3Serialize\Bullet2FileLoader\b3DNA.cpp(526): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3Serialize\Bullet2FileLoader\b3File.cpp(34): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3Serialize\Bullet2FileLoader\b3File.cpp(69): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>..\..\src\Bullet3Serialize\Bullet2FileLoader\b3File.cpp(78): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\Bullet3Serialize\Bullet2FileLoader\b3File.cpp(553): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+         b3Serializer.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\lib\Bullet2FileLoader_vs2010_x64_release.lib" /NOLOGO /MACHINE:X64 obj\x64\Release\Bullet2FileLoader\b3BulletFile.obj
+         obj\x64\Release\Bullet2FileLoader\b3Chunk.obj
+         obj\x64\Release\Bullet2FileLoader\b3DNA.obj
+         obj\x64\Release\Bullet2FileLoader\b3File.obj
+         obj\x64\Release\Bullet2FileLoader\b3Serializer.obj
+         Bullet2FileLoader.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\lib\Bullet2FileLoader_vs2010_x64_release.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet2FileLoader.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.58

@@ -1,0 +1,27 @@
+﻿Build started 08-08-2015 07:33:04 p.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3Common.vcxproj" on node 4 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /nologo /W3 /WX- /Ox /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\Bullet3Common\\" /Fd"obj\x64\Release\Bullet3Common\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\src\Bullet3Common\b3AlignedAllocator.cpp ..\..\src\Bullet3Common\b3Logging.cpp ..\..\src\Bullet3Common\b3Vector3.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3AlignedAllocator.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3Logging.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         b3Vector3.cpp
+     1>..\..\src\Bullet3Common\b3Vector3.cpp(170): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+     1>..\..\src\Bullet3Common\b3Vector3.cpp(175): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>..\..\src\Bullet3Common\b3Vector3.cpp(418): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+     1>..\..\src\Bullet3Common\b3Vector3.cpp(556): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+     1>..\..\src\Bullet3Common\b3Vector3.cpp(561): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>..\..\src\Bullet3Common\b3Vector3.cpp(807): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\bin\Bullet3Common_vs2010_x64_release.lib" /NOLOGO /MACHINE:X64 obj\x64\Release\Bullet3Common\b3AlignedAllocator.obj
+         obj\x64\Release\Bullet3Common\b3Logging.obj
+         obj\x64\Release\Bullet3Common\b3Vector3.obj
+         Bullet3Common.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\Bullet3Common_vs2010_x64_release.lib
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\Bullet3Common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.78
