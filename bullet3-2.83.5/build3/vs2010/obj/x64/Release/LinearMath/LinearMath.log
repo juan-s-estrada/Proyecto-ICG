@@ -1,9 +1,38 @@
-﻿Build started 08-08-2015 08:32:59 p.m..
-     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\LinearMath.vcxproj" on node 3 (Build target(s)).
-     1>Lib:
+﻿Build started 09-08-2015 11:51:46 a.m..
+     1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\LinearMath.vcxproj" on node 4 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\src /nologo /W3 /WX- /Ox /GF /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Fo"obj\x64\Release\LinearMath\\" /Fd"obj\x64\Release\LinearMath\vc120.pdb" /Gd /TP /errorReport:prompt /MP ..\..\src\LinearMath\btAlignedAllocator.cpp ..\..\src\LinearMath\btConvexHull.cpp ..\..\src\LinearMath\btConvexHullComputer.cpp ..\..\src\LinearMath\btGeometryUtil.cpp ..\..\src\LinearMath\btPolarDecomposition.cpp ..\..\src\LinearMath\btQuickprof.cpp ..\..\src\LinearMath\btSerializer.cpp ..\..\src\LinearMath\btVector3.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btAlignedAllocator.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btConvexHull.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btConvexHullComputer.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         btGeometryUtil.cpp
+         btPolarDecomposition.cpp
+         btQuickprof.cpp
+         btSerializer.cpp
+         btVector3.cpp
+     1>..\..\src\LinearMath\btVector3.cpp(179): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+     1>..\..\src\LinearMath\btVector3.cpp(184): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>..\..\src\LinearMath\btVector3.cpp(427): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+     1>..\..\src\LinearMath\btVector3.cpp(564): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+     1>..\..\src\LinearMath\btVector3.cpp(569): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>..\..\src\LinearMath\btVector3.cpp(815): warning C4267: '=' : conversion from 'size_t' to 'long', possible loss of data
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"..\..\bin\LinearMath_vs2010_x64_release.lib" /NOLOGO /MACHINE:X64 obj\x64\Release\LinearMath\btAlignedAllocator.obj
+         obj\x64\Release\LinearMath\btConvexHull.obj
+         obj\x64\Release\LinearMath\btConvexHullComputer.obj
+         obj\x64\Release\LinearMath\btGeometryUtil.obj
+         obj\x64\Release\LinearMath\btPolarDecomposition.obj
+         obj\x64\Release\LinearMath\btQuickprof.obj
+         obj\x64\Release\LinearMath\btSerializer.obj
+         obj\x64\Release\LinearMath\btVector3.obj
          LinearMath.vcxproj -> C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\..\..\bin\LinearMath_vs2010_x64_release.lib
-     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\LinearMath.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\build3\vs2010\LinearMath.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:23.44

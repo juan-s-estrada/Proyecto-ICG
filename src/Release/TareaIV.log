@@ -1,13 +1,22 @@
-﻿Build started 08-08-2015 08:58:41 p.m..
+﻿Build started 10-08-2015 10:45:40 a.m..
      1>Project "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\TareaIV.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.exe" /NOLOGO /LIBPATH:..\lib opengl32.lib glfw3.lib glu32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.lib" /MACHINE:X86 /SAFESEH Release\GLSLProgram.obj
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /Zi /nologo /W3 /WX- /sdl /MP /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt _skyBox.cpp main.cpp
+         _skyBox.cpp
+         main.cpp
+     1>_skyBox.cpp(42): warning C4018: '<' : signed/unsigned mismatch
+     1>main.cpp(148): warning C4018: '<=' : signed/unsigned mismatch
+     1>main.cpp(268): warning C4018: '<=' : signed/unsigned mismatch
+     1>main.cpp(506): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.exe" /NOLOGO /LIBPATH:..\lib opengl32.lib glfw3.lib glu32.lib glew32.lib SDL2.lib SDL2main.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\src\Release\TareaIV.lib" /MACHINE:X86 /SAFESEH Release\GLSLProgram.obj
          Release\main.obj
          Release\mesh.obj
          Release\objReader.obj
          Release\offReader.obj
          Release\Triangle.obj
          Release\Vertices.obj
+         Release\_skyBox.obj
          "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\bin\BulletCollision_vs2010.lib"
          "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\bin\BulletDynamics_vs2010.lib"
          "C:\Users\Jazmina Liz\Desktop\Proyecto-ICG\bullet3-2.83.5\bin\LinearMath_vs2010.lib"
@@ -19,4 +28,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:08.05
+Time Elapsed 00:00:16.82

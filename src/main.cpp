@@ -12,14 +12,25 @@
 #include "gtx/transform2.hpp"
 #include "btBulletDynamicsCommon.h"
 
+//------SDL------/
+#include <SDL/SDL.h>
+#include <SDL/SDL_mixer.h>
+
  using namespace std;
 
- 
+ //The music that will be played
+ Mix_Music *gMusic = NULL;
 
+ //The sound effects that will be used
+ Mix_Chunk *gScratch = NULL;
+ Mix_Chunk *gHigh = NULL;
+ Mix_Chunk *gMedium = NULL;
+ Mix_Chunk *gLow = NULL;
+//---Textures, thanks SDL!---//
+SDL_Surface *TextureImage[1];
 
 glm::vec3 Ambient = glm::vec3(0.1f, 0.1f, 0.8f);
 glm::mat4 projection, view;
-
 int Selection = -1;
 float NormalColor[3] = { 0.5f, 0.5f, 0.5f };
 float ModelColor[3] = { 0.5f, 0.5f, 0.5f };
@@ -30,8 +41,11 @@ float ScaleFactor[] = { 1.f, 1.f,1.f };
 int DummySelection = 0;
 bool ZBuffer = true;
 bool CullFace = true;
+TwBar *bar, *barLights;
 GLuint indexes[32];
+GLuint textureID[32];
 GLuint VBOid[32][6];
+
 GLushort BBoxIndices[] = { 0, 1, 1, 5, 5, 4, 4, 0
 , 3, 2, 2, 6, 6, 7, 7, 3
 , 1, 2, 5, 6, 4, 7, 0, 3
@@ -53,8 +67,8 @@ glm::vec3 Col2 = glm::vec3(.2f, .2f, .2f);
 glm::vec3 Col1S = glm::vec3(.2f, .2f, .2f);
 glm::vec3 Col2S = glm::vec3(.2f, .2f, .2f);
 typedef enum {Point,Wireframe,Filled }RenderingStyle;
-
-CGLSLProgram * glslProgram[2];
+bool success;
+CGLSLProgram * glslProgram[3];
 std::vector<offReader> offObjects;
 bool IOtest = false;
 bool Orthogonal = false;
@@ -63,12 +77,9 @@ bool DrawNormals =true;
 bool DrawBBoxDummy = true;
 bool DrawNormalsDummy = true;
 int NumModels = 0;
-/*
-RenderingMode SelectedMode = VBO;
-RenderingMode Mode = VBO;
-*/
+
 RenderingStyle Style = Filled;
-bool initGlew(int i)
+bool initGlew()
 {
 	if (glewInit()){ std::cout << "Error"; return false; }
 		
@@ -80,31 +91,58 @@ bool initGlew(int i)
 		printf("GLSL Version: %s \n", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
 		printf("\n\nShader: Color \n");
-		
+		for (int i = 0; i <= 2; i++)
 		glslProgram[i] = new CGLSLProgram();
-		if (i == 0){
-			glslProgram[i]->loadFromFile("../shaders/perPixel.vert");
-			glslProgram[i]->loadFromFile("../shaders/perPixel.frag");
-			glslProgram[i]->create();
-			glslProgram[i]->loadUniformVariables();
-			glslProgram[i]->loadAttributeVariables();
-		}
-		else{
-			glslProgram[i]->loadFromFile("../shaders/Color.vert");
-			glslProgram[i]->loadFromFile("../shaders/Color.frag");
-			glslProgram[i]->create();
-			glslProgram[i]->loadUniformVariables();
-			glslProgram[i]->loadAttributeVariables();
+		//-----Per Pixel shader that-s ought to be upgraded with bumpmapping----//
+			
+			glslProgram[0]->loadFromFile("../shaders/perPixel.vert");
+			glslProgram[0]->loadFromFile("../shaders/perPixel.frag");
+			glslProgram[0]->create();
+			glslProgram[0]->loadUniformVariables();
+			glslProgram[0]->loadAttributeVariables();
 
-		
-		
-		}
-		
-		return true;
-	}
+		//--------Not at all important, previusly used for normals and bounding boxes-----///
+			glslProgram[1]->loadFromFile("../shaders/Color.vert");
+			glslProgram[1]->loadFromFile("../shaders/Color.frag");
+			glslProgram[1]->create();
+			glslProgram[1]->loadUniformVariables();
+			glslProgram[1]->loadAttributeVariables();
+		//--------Sky Box-----///
+			glslProgram[2]->loadFromFile("../shaders/SkyBox.vert");
+			glslProgram[2]->loadFromFile("../shaders/SkyBox.frag");
+			glslProgram[2]->create();
+			glslProgram[2]->loadUniformVariables();
+			glslProgram[2]->loadAttributeVariables();
+
+			return true;}
 }
 
+void loadTextures(){
+	if ((TextureImage[0] = SDL_LoadBMP("../SkyBox.bmp")))
+	{
 
+		/* Set the status to true */
+		bool Status = true;
+		//OutputDebugStringW(L"My output string.");
+		/* Create The Texture */
+		glGenTextures(1, &textureID[0]);
+
+		/* Typical Texture Generation Using Data From The Bitmap */
+		glBindTexture(GL_TEXTURE_2D, textureID[0]);
+
+		/* Generate The Texture */
+		glTexImage2D(GL_TEXTURE_CUBE_MAP, 0, 3, TextureImage[0]->w,
+			TextureImage[0]->h, 0, GL_RGB,
+			GL_UNSIGNED_BYTE, TextureImage[0]->pixels);
+		glGetError();
+
+		/* Linear Filtering */
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	}
+
+
+}
 void cosa(){
 
 	if (Selection >0 && Selection <= offObjects.size()){
@@ -144,7 +182,6 @@ void cosa(){
 	}
 
 }
-
 static void initVBO( int i){
 glewInit();
 glGenBuffers(1, &VBOid[i][0]);
@@ -179,7 +216,6 @@ glBindBufferARB(GL_ELEMENT_ARRAY_BUFFER_ARB, NULL);
 
 
 }
-
 void LoadModel(std::string path){
 	if (offObjects.size() <= 32) {
 		offObjects.push_back(offReader(path));
@@ -192,7 +228,6 @@ void LoadModel(std::string path){
 		std::cout << "Ya existen 32 objetos" << std::endl;
 	
 	}};
-
 static	void  OnMousePos(GLFWwindow* window, double xpos, double ypos)
 {
 	double rxpos, rypos;
@@ -202,8 +237,6 @@ static	void  OnMousePos(GLFWwindow* window, double xpos, double ypos)
 	cosa();
 
 }
-
-
 static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
 
@@ -261,124 +294,16 @@ void TW_CALL Select(void *clientData)
 
 
 }
-
-
 void TW_CALL ApplyChanges(void *clientData)
 {
 	DrawBBox = DrawBBoxDummy;
 	DrawNormals = DrawNormalsDummy;
 	
 }
-
-
-
-int main(){
-	
-
-
-	{
-		btBroadphaseInterface* broadphase = new btDbvtBroadphase();
-
-		btDefaultCollisionConfiguration* collisionConfiguration = new btDefaultCollisionConfiguration();
-		btCollisionDispatcher* dispatcher = new btCollisionDispatcher(collisionConfiguration);
-
-		btSequentialImpulseConstraintSolver* solver = new btSequentialImpulseConstraintSolver;
-
-		btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
-
-		dynamicsWorld->setGravity(btVector3(0, -10, 0));
-
-
-		btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
-
-		btCollisionShape* fallShape = new btSphereShape(1);
-
-
-		btDefaultMotionState* groundMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, -1, 0)));
-		btRigidBody::btRigidBodyConstructionInfo
-			groundRigidBodyCI(0, groundMotionState, groundShape, btVector3(0, 0, 0));
-		btRigidBody* groundRigidBody = new btRigidBody(groundRigidBodyCI);
-		dynamicsWorld->addRigidBody(groundRigidBody);
-
-
-		btDefaultMotionState* fallMotionState =
-			new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 50, 0)));
-		btScalar mass = 1;
-		btVector3 fallInertia(0, 0, 0);
-		fallShape->calculateLocalInertia(mass, fallInertia);
-		btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass, fallMotionState, fallShape, fallInertia);
-		btRigidBody* fallRigidBody = new btRigidBody(fallRigidBodyCI);
-		dynamicsWorld->addRigidBody(fallRigidBody);
-
-
-		for (int i = 0; i < 300; i++) {
-			dynamicsWorld->stepSimulation(1 / 60.f, 10);
-
-			btTransform trans;
-			fallRigidBody->getMotionState()->getWorldTransform(trans);
-
-			std::cout << "sphere height: " << trans.getOrigin().getY() << std::endl;
-		}
-
-		dynamicsWorld->removeRigidBody(fallRigidBody);
-		delete fallRigidBody->getMotionState();
-		delete fallRigidBody;
-
-		dynamicsWorld->removeRigidBody(groundRigidBody);
-		delete groundRigidBody->getMotionState();
-		delete groundRigidBody;
-
-
-		delete fallShape;
-
-		delete groundShape;
-
-
-		delete dynamicsWorld;
-		delete solver;
-		delete collisionConfiguration;
-		delete dispatcher;
-		delete broadphase;
-}
-
-
-
-	
-
-	const float NCP = 1.f;
-	const float FCP = 50.0f;
-	const float fAngle = 45.f;
-	
-	int it=0;
-	GLFWwindow* window;
-	
-	if (!glfwInit())
-		exit(EXIT_FAILURE);
-	window = glfwCreateWindow(1024, 768, "Simple example", NULL, NULL);
-	if (!window)
-	{
-		glfwTerminate();
-		exit(EXIT_FAILURE);
-	}
-	glfwMakeContextCurrent(window);
-	glfwSwapInterval(1);
-	initGlew(0);
-	initGlew(1);
-
-	
-	TwBar *bar,*barLights;        
+inline void setAntTweak(){
 	TwInit(TW_OPENGL, NULL);
 	bar = TwNewBar("Objects");
 	barLights = TwNewBar("Lights");
-	TwWindowSize(1024, 768);
-	glfwSetCursorPosCallback(window, (GLFWcursorposfun)OnMousePos);
-	glfwSetMouseButtonCallback(window, mouse_button_callback);
-	glfwSetDropCallback(window, addObject);
-	const char title[] = "Tarea IV";
-	glfwSetWindowTitle(window,title);
-
-
-
 	TwAddVarRW(bar, "ObjRotation", TW_TYPE_QUAT4F, &g_Rotation,
 		" label='Object rotation' opened=true help='Change the object orientation.' ");
 	TwAddVarRW(bar, "Draw Bounding Box", TW_TYPE_BOOL8, &DrawBBoxDummy,
@@ -389,13 +314,13 @@ int main(){
 		"group='Rendering Options'  label='BackFaceCulling'  help='Toggles between using/not using the Back face culling ' ");
 
 
-	TwAddVarRW(bar, "Draw per face normals", TW_TYPE_BOOL8, &DrawNormalsDummy," group='Rendering Options' label='Draw per face normals'  help='Toggles between drawing/not drawing the face normals' ");
+	TwAddVarRW(bar, "Draw per face normals", TW_TYPE_BOOL8, &DrawNormalsDummy, " group='Rendering Options' label='Draw per face normals'  help='Toggles between drawing/not drawing the face normals' ");
 	TwAddButton(bar, "Apply Options", ApplyChanges, NULL, "group='Rendering Options' label='Apply Options' ");
 	TwAddVarRW(bar, "X", TW_TYPE_FLOAT, &ScaleFactor[0], " group='Scale' label='Scale X' step=0.01");
 	TwAddVarRW(bar, "Y", TW_TYPE_FLOAT, &ScaleFactor[1], "group='Scale' label='Scale Y' step=0.01");
 	TwAddVarRW(bar, "Z", TW_TYPE_FLOAT, &ScaleFactor[2], "group='Scale' label='Scale Z' step=0.01");
 	TwAddButton(bar, "Apply", Scale, NULL, "group='Scale' label='Apply' ");
-	TwAddVarRW(bar, "Perspective/Projection", TW_TYPE_BOOL8, &Orthogonal,"  label='Perspective/Projection'  help='Toggles between perspective/projection matrices' ");
+	TwAddVarRW(bar, "Perspective/Projection", TW_TYPE_BOOL8, &Orthogonal, "  label='Perspective/Projection'  help='Toggles between perspective/projection matrices' ");
 
 
 	TwAddVarRO(bar, "Models:", TW_TYPE_INT32, &NumModels, "group='Selection' label='Number of Models'");
@@ -409,7 +334,7 @@ int main(){
 	TwDefine("Objects/Shininess min = 0");
 	TwAddVarRW(bar, "Specular Color", TW_TYPE_COLOR3F, &SpecularColor, "group='Material' label='SpecularColor' ");
 
-	
+
 	TwAddVarRW(bar, "X Displacement", TW_TYPE_FLOAT, &gTranslation[0], "group='Displacement' label='X Displacement' step=0.01 ");
 	TwAddVarRW(bar, "Y Displacement", TW_TYPE_FLOAT, &gTranslation[1], "group='Displacement' label='Y Displacement' step=0.01 ");
 	TwAddVarRW(bar, "Z Displacement", TW_TYPE_FLOAT, &gTranslation[2], "group='Displacement' label='Z Displacement' step=0.01 ");
@@ -427,20 +352,109 @@ int main(){
 	TwAddVarRW(barLights, "Light 2 Spc", TW_TYPE_COLOR3F, &Col2S, "group='Lights' label='L2 Spc' ");
 	TwAddVarRW(barLights, "Ambient", TW_TYPE_COLOR3F, &Ambient, "group='Lights' label='Ambient' ");
 
-	
 
-	TwEnumVal Styles[] = { { Point, "Point" }, { Wireframe, "Wireframe" }, { Filled, "Filled" }};
+
+	TwEnumVal Styles[] = { { Point, "Point" }, { Wireframe, "Wireframe" }, { Filled, "Filled" } };
 	TwType StyleOpt;
 	StyleOpt = TwDefineEnum("Style", Styles, 3);
 	TwAddVarRW(bar, "Style", StyleOpt, &Style, NULL);
 
 
+
+
+
+}
+
+#ifdef _WIN32
+#undef main
+#endif
+
+void loadMusic(){
+
+	gMusic = Mix_LoadMUS("../Soundtrack/Saturnsky.mp3");
+	if (gMusic == NULL)
+	{
+		printf("Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError());
+		success = false;
+	}
+	else{ printf("So loaded"); 
+	//Mix_PlayMusic(gMusic, -1);
+	
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+
+int main(){
+	std::vector<std::string> Paths;
+	Paths.push_back("../files/Stars_mz.bmp");
+	Paths.push_back("../files/Stars_pz.bmp");
+	Paths.push_back("../files/Stars_mx.bmp");
+	Paths.push_back("../files/Stars_px.bmp");
+	Paths.push_back("../files/Stars_my.bmp");
+	Paths.push_back("../files/Stars_py.bmp");
+
+	if (SDL_Init( SDL_INIT_AUDIO) < 0)
+	{
+		printf("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
+		success = false;
+	}
+
+
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+	{
+		printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
+		success = false;
+	}
+	loadMusic();
+
+	const float NCP = 1.f;
+	const float FCP = 50.0f;
+	const float fAngle = 45.f;
+	
+	int it=0;
+	GLFWwindow* window;
+	
+	if (!glfwInit())
+		std::exit(EXIT_FAILURE);
+	window = glfwCreateWindow(1024, 768, "Simple example", NULL, NULL);
+	 //window = glfwCreateWindow(1366, 768, "Kessel Run", glfwGetPrimaryMonitor(), nullptr);
+
+	if (!window)
+	{
+		glfwTerminate();
+		std::exit(EXIT_FAILURE);
+	}
+	glfwMakeContextCurrent(window);
+	glfwSwapInterval(1);
+	
+	
+	       
+	TwWindowSize(1024, 768);
+	glfwSetCursorPosCallback(window, (GLFWcursorposfun)OnMousePos);
+	glfwSetMouseButtonCallback(window, mouse_button_callback);
+	glfwSetDropCallback(window, addObject);
+	const char title[] = "Tarea IV";
+	glfwSetWindowTitle(window,title);
+	setAntTweak();
 	double time = glfwGetTime(), dt = 0;            // Current time and elapsed time
 	double frameDTime = 0, frameCount = 0, fps = 0; // Framerate
 
+	initGlew();
 
+
+//	loadTextures();
 	while (!glfwWindowShouldClose(window))
 	{
+
 		dt = glfwGetTime() - time;
 		if (dt < 0) dt = 0;
 		time += dt;
@@ -451,15 +465,6 @@ int main(){
 		ratio = width / (float)height;
 		glViewport(0, 0, width, height);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	/*	glClearColor(0.15f, 0.15f, 0.15f, 1.f);
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-
-		
-		
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();*/
-		
 		if (Style == Filled)glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		if (Style == Wireframe)glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		if (Style == Point)glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
@@ -468,13 +473,13 @@ int main(){
 		if (CullFace) glEnable(GL_CULL_FACE);
 		if (ZBuffer) glEnable(GL_DEPTH_TEST);
 		
-		view = glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-
+		
 
 		if (Orthogonal) { projection = glm::ortho(-(float)width / (float)height, (float)width / (float)height, -1.f, 1.f, 1.0f, 1000.0f); }
 		else{ projection = glm::perspective(45.0f, (float)width / (float)height, 1.0f, 1000.0f); }
+		view = glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-		//projection = glm::perspective(45.0f, (float)width / (float)height, 1.0f, 1000.0f);
+	//	drawSkyBox();
 
 	for (int i = 0; i < offObjects.size(); i++){
 		glm::mat4 model = glm::mat4(1.0f);
@@ -571,10 +576,10 @@ int main(){
 	}
 	glfwDestroyWindow(window);
 	glfwTerminate();
-	exit(EXIT_SUCCESS);
+//std::exit(EXIT_SUCCESS);
 	
 	
-	exit(0);
+	std::exit(0);
 
 
 
