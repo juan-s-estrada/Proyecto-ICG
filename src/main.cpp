@@ -38,6 +38,8 @@ float BBColor[3] = { 0.5f, 0.5f, 0.5f };
 float gTranslation[] = { 0.0f, 0.0f, 0.0f };
 float g_Rotation[] = { 0.0f, 0.0f, 0.0f, 1.0f };
 float ScaleFactor[] = { 1.f, 1.f,1.f };
+float Velocity[] = { 0.f, 0.f, 0.f };
+
 int DummySelection = 0;
 bool ZBuffer = true;
 bool CullFace = true;
@@ -77,7 +79,7 @@ bool DrawNormals =true;
 bool DrawBBoxDummy = true;
 bool DrawNormalsDummy = true;
 int NumModels = 0;
-
+btRigidBody* fallRigidBody;
 RenderingStyle Style = Filled;
 bool initGlew()
 {
@@ -316,9 +318,9 @@ inline void setAntTweak(){
 
 	TwAddVarRW(bar, "Draw per face normals", TW_TYPE_BOOL8, &DrawNormalsDummy, " group='Rendering Options' label='Draw per face normals'  help='Toggles between drawing/not drawing the face normals' ");
 	TwAddButton(bar, "Apply Options", ApplyChanges, NULL, "group='Rendering Options' label='Apply Options' ");
-	TwAddVarRW(bar, "X", TW_TYPE_FLOAT, &ScaleFactor[0], " group='Scale' label='Scale X' step=0.01");
-	TwAddVarRW(bar, "Y", TW_TYPE_FLOAT, &ScaleFactor[1], "group='Scale' label='Scale Y' step=0.01");
-	TwAddVarRW(bar, "Z", TW_TYPE_FLOAT, &ScaleFactor[2], "group='Scale' label='Scale Z' step=0.01");
+	TwAddVarRW(bar, "X", TW_TYPE_FLOAT, &Velocity[0], " group='Scale' label='Scale X' step=0.01");
+	TwAddVarRW(bar, "Y", TW_TYPE_FLOAT, &Velocity[1], "group='Scale' label='Scale Y' step=0.01");
+	TwAddVarRW(bar, "Z", TW_TYPE_FLOAT, &Velocity[2], "group='Scale' label='Scale Z' step=0.01");
 	TwAddButton(bar, "Apply", Scale, NULL, "group='Scale' label='Apply' ");
 	TwAddVarRW(bar, "Perspective/Projection", TW_TYPE_BOOL8, &Orthogonal, "  label='Perspective/Projection'  help='Toggles between perspective/projection matrices' ");
 
@@ -379,18 +381,32 @@ void loadMusic(){
 	}
 	else{ printf("So loaded"); 
 	//Mix_PlayMusic(gMusic, -1);
+	}}
+
+static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+	if (key == GLFW_KEY_W && action == GLFW_PRESS){
+		Velocity[1] += 0.1f;
+		btVector3 vel = btVector3(Velocity[0], Velocity[1] , Velocity[2]);
+		fallRigidBody->setLinearVelocity(vel);
 	
 	}
 
+	if (key == GLFW_KEY_S && action == GLFW_PRESS){
+		Velocity[1] -= 0.1f;
+
+		btVector3 vel = btVector3(Velocity[0], Velocity[1] - 0.1f, Velocity[2]);
+		fallRigidBody->setLinearVelocity(vel);
+	}
+	if (key == GLFW_KEY_D && action == GLFW_PRESS){
+		Velocity[0] += 0.1f;
+
+		btVector3 vel = btVector3(Velocity[0], Velocity[1], Velocity[2]);
+		fallRigidBody->setLinearVelocity(vel);
 	
+	}
+
 }
-
-
-
-
-
-
-
 
 
 int main(){
@@ -402,7 +418,7 @@ int main(){
 	Paths.push_back("../files/Stars_my.bmp");
 	Paths.push_back("../files/Stars_py.bmp");
 
-	if (SDL_Init( SDL_INIT_AUDIO) < 0)
+if (SDL_Init( SDL_INIT_AUDIO) < 0)
 	{
 		printf("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
 		success = false;
@@ -445,10 +461,46 @@ int main(){
 	const char title[] = "Tarea IV";
 	glfwSetWindowTitle(window,title);
 	setAntTweak();
+	glfwSetKeyCallback(window, key_callback);
 	double time = glfwGetTime(), dt = 0;            // Current time and elapsed time
 	double frameDTime = 0, frameCount = 0, fps = 0; // Framerate
 
 	initGlew();
+
+	LoadModel("../files/algo.obj");
+	//LoadModel("../files/algocaras4.obj");
+
+	btBroadphaseInterface* broadphase = new btDbvtBroadphase();
+	btDefaultCollisionConfiguration* collisionConfiguration = new btDefaultCollisionConfiguration();
+	btCollisionDispatcher* dispatcher = new btCollisionDispatcher(collisionConfiguration);
+	btSequentialImpulseConstraintSolver* solver = new btSequentialImpulseConstraintSolver;
+	btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
+	dynamicsWorld->setGravity(btVector3(0, 0, 0));
+
+	btCollisionShape* CapsuleShape = new btSphereShape(1);
+	btVector3 halfExtent = btVector3((offObjects[0].maxX - offObjects[0].minX) / 2.f, (offObjects[0].maxY - offObjects[0].minY) / 2.f, (offObjects[0].maxZ - offObjects[0].minZ) / 2.f);
+	btCollisionShape* BoxShape = new btBoxShape(halfExtent);
+	
+	btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), -1);
+
+
+	btDefaultMotionState* groundMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, -3, 0)));
+	btRigidBody::btRigidBodyConstructionInfo groundRigidBodyCI(0, groundMotionState, groundShape, btVector3(0, 0, 0));
+	btRigidBody* groundRigidBody = new btRigidBody(groundRigidBodyCI);
+	dynamicsWorld->addRigidBody(groundRigidBody);
+
+
+	btDefaultMotionState* fallMotionState =
+		new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 5, 0)));
+	btScalar mass = 10.f;
+	btVector3 fallInertia(0, 0, 0);
+	BoxShape->calculateLocalInertia(mass, fallInertia);
+	btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass, fallMotionState, BoxShape, fallInertia);
+	fallRigidBody = new btRigidBody(fallRigidBodyCI);
+	dynamicsWorld->addRigidBody(fallRigidBody);
+
+	fallRigidBody->setActivationState(DISABLE_DEACTIVATION);
+
 
 
 //	loadTextures();
@@ -480,10 +532,19 @@ int main(){
 		view = glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 	//	drawSkyBox();
+		dynamicsWorld->stepSimulation(1 / 60.f, 10);
+
+		btTransform trans;
+		fallRigidBody->getMotionState()->getWorldTransform(trans);
+		btVector3 linearVel = btVector3(Velocity[0], Velocity[1], Velocity[2]);
+		fallRigidBody->setLinearVelocity(linearVel);
+		std::cout << "sphere height: " << trans.getOrigin().getY() << std::endl;
+		
+		offObjects[0].mesh.DisplacementVector = glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ());
 
 	for (int i = 0; i < offObjects.size(); i++){
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::scale(glm::vec3(offObjects[i].Scaling[0], offObjects[i].Scaling[1], offObjects[i].Scaling[2])) * glm::translate(model, offObjects[i].mesh.DisplacementVector)*glm::scale(model, glm::vec3(offObjects[i].Largest, offObjects[i].Largest,offObjects[i].Largest))*glm::translate(model, glm::vec3(-offObjects[i].MidPoint.Vertex[0], -offObjects[i].MidPoint.Vertex[1], -offObjects[i].MidPoint.Vertex[2]))* glm::translate(model, glm::vec3(offObjects[i].MidPoint.Vertex[0], offObjects[i].MidPoint.Vertex[1], offObjects[i].MidPoint.Vertex[2]))* glm::mat4_cast(offObjects[i].mesh.RotationMatrix)* glm::translate(model, glm::vec3(-offObjects[i].MidPoint.Vertex[0], -offObjects[i].MidPoint.Vertex[1], -offObjects[i].MidPoint.Vertex[2]));
+		model = glm::scale(glm::vec3(offObjects[i].Scaling[0], offObjects[i].Scaling[1], offObjects[i].Scaling[2])) * glm::translate(model, offObjects[i].mesh.DisplacementVector)* glm::mat4_cast(offObjects[i].mesh.RotationMatrix);
 		//model = glm::translate(model, offObjects[i].mesh.DisplacementVector);
 		glm::mat4 mv = view*model;
 		glm::mat4 normalMatrix = glm::transpose(glm::inverse(mv));
