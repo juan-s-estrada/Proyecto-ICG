@@ -79,7 +79,8 @@ bool DrawNormals =true;
 bool DrawBBoxDummy = true;
 bool DrawNormalsDummy = true;
 int NumModels = 0;
-btRigidBody* fallRigidBody;
+std::vector<btRigidBody *> Bodies;
+btRigidBody* fallRigidBody, *fallRigidBody2, *fallRigidBody3, *fallRigidBody4, *fallRigidBody5;
 RenderingStyle Style = Filled;
 bool initGlew()
 {
@@ -386,27 +387,53 @@ void loadMusic(){
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_W && action == GLFW_PRESS){
-		Velocity[1] += 0.1f;
-		btVector3 vel = btVector3(Velocity[0], Velocity[1] , Velocity[2]);
-		fallRigidBody->setLinearVelocity(vel);
-	
+		
+		Bodies[0]->applyCentralForce(btVector3(0, 1000.5f, 0));
+
 	}
 
 	if (key == GLFW_KEY_S && action == GLFW_PRESS){
-		Velocity[1] -= 0.1f;
+		Bodies[0]->applyCentralForce(btVector3(0, -1000.5f, 0));
 
-		btVector3 vel = btVector3(Velocity[0], Velocity[1] - 0.1f, Velocity[2]);
-		fallRigidBody->setLinearVelocity(vel);
 	}
 	if (key == GLFW_KEY_D && action == GLFW_PRESS){
-		Velocity[0] += 0.1f;
+		Bodies[0]->applyCentralForce(btVector3(1000.5f, 0, 0));
+	}
 
-		btVector3 vel = btVector3(Velocity[0], Velocity[1], Velocity[2]);
-		fallRigidBody->setLinearVelocity(vel);
-	
+	if (key == GLFW_KEY_A && action == GLFW_PRESS){
+		Bodies[0]->applyCentralForce(btVector3(-1000.5f, 0, 0));
+
+
+	}
+	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS){
+		fallRigidBody->applyCentralForce(btVector3(0, 1000.5f, 0));
+
+
 	}
 
 }
+
+
+void initializeRigidBodies(int Num){
+	float Lim = -6;
+	for (int i = 0; i < Num; i++){
+		btVector3 halfExtent = btVector3((offObjects[i].maxX - offObjects[i].minX) / 2.f, (offObjects[i].maxY - offObjects[i].minY) / 2.f, (offObjects[i].maxZ - offObjects[i].minZ) / 2.f);
+		btCollisionShape* BoxShape = new btBoxShape(halfExtent);
+		btDefaultMotionState* fallMotionState;
+		if (i != 0){  fallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, Lim += 2.5f, 0))); }
+		else{  fallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(-10, 3, 0))); }
+		
+		btScalar mass = 10.f;
+		btVector3 fallInertia(0, 0, 0);
+		BoxShape->calculateLocalInertia(mass, fallInertia);
+		btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass, fallMotionState, BoxShape, fallInertia);
+		fallRigidBody = new btRigidBody(fallRigidBodyCI);
+		float Vel[] = { -5, 5 };
+		if (i != 0)fallRigidBody->setLinearVelocity(btVector3(Vel[rand() % 2], 0, 0));
+		Bodies.push_back(fallRigidBody);
+		
+	
+	}};
 
 
 int main(){
@@ -467,21 +494,21 @@ if (SDL_Init( SDL_INIT_AUDIO) < 0)
 
 	initGlew();
 
-	LoadModel("../files/algo.obj");
-	//LoadModel("../files/algocaras4.obj");
+	int x = 0; 
+	std::cin >> x;
+	while (x-->0) LoadModel("../files/algo.obj");
+
+
 
 	btBroadphaseInterface* broadphase = new btDbvtBroadphase();
 	btDefaultCollisionConfiguration* collisionConfiguration = new btDefaultCollisionConfiguration();
 	btCollisionDispatcher* dispatcher = new btCollisionDispatcher(collisionConfiguration);
+	
 	btSequentialImpulseConstraintSolver* solver = new btSequentialImpulseConstraintSolver;
 	btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
 	dynamicsWorld->setGravity(btVector3(0, 0, 0));
 
-	btCollisionShape* CapsuleShape = new btSphereShape(1);
-	btVector3 halfExtent = btVector3((offObjects[0].maxX - offObjects[0].minX) / 2.f, (offObjects[0].maxY - offObjects[0].minY) / 2.f, (offObjects[0].maxZ - offObjects[0].minZ) / 2.f);
-	btCollisionShape* BoxShape = new btBoxShape(halfExtent);
-	
-	btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), -1);
+	btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), -10);
 
 
 	btDefaultMotionState* groundMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, -3, 0)));
@@ -490,16 +517,10 @@ if (SDL_Init( SDL_INIT_AUDIO) < 0)
 	dynamicsWorld->addRigidBody(groundRigidBody);
 
 
-	btDefaultMotionState* fallMotionState =
-		new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 5, 0)));
-	btScalar mass = 10.f;
-	btVector3 fallInertia(0, 0, 0);
-	BoxShape->calculateLocalInertia(mass, fallInertia);
-	btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass, fallMotionState, BoxShape, fallInertia);
-	fallRigidBody = new btRigidBody(fallRigidBodyCI);
-	dynamicsWorld->addRigidBody(fallRigidBody);
+	initializeRigidBodies(offObjects.size());
 
-	fallRigidBody->setActivationState(DISABLE_DEACTIVATION);
+	for (int i = 0; i < Bodies.size(); i++){dynamicsWorld->addRigidBody(Bodies[i]);}
+	for (int i = 0; i < Bodies.size(); i++){Bodies[i]->setActivationState(DISABLE_DEACTIVATION);}
 
 
 
@@ -529,20 +550,45 @@ if (SDL_Init( SDL_INIT_AUDIO) < 0)
 
 		if (Orthogonal) { projection = glm::ortho(-(float)width / (float)height, (float)width / (float)height, -1.f, 1.f, 1.0f, 1000.0f); }
 		else{ projection = glm::perspective(45.0f, (float)width / (float)height, 1.0f, 1000.0f); }
-		view = glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		view = glm::lookAt(glm::vec3(0.0f, 0.0f, 20.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-	//	drawSkyBox();
-		dynamicsWorld->stepSimulation(1 / 60.f, 10);
+		dynamicsWorld->stepSimulation(1/60.f, 1, 1/60.f);
+
 
 		btTransform trans;
-		fallRigidBody->getMotionState()->getWorldTransform(trans);
-		btVector3 linearVel = btVector3(Velocity[0], Velocity[1], Velocity[2]);
-		fallRigidBody->setLinearVelocity(linearVel);
-		std::cout << "sphere height: " << trans.getOrigin().getY() << std::endl;
-		
-		offObjects[0].mesh.DisplacementVector = glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ());
+		for (int i = 0; i < Bodies.size(); i++){
+			Bodies[i]->getMotionState()->getWorldTransform(trans);
+			offObjects[i].mesh.DisplacementVector = glm::vec3((float)trans.getOrigin().getX(), (float)trans.getOrigin().getY(), (float)trans.getOrigin().getZ());
+			offObjects[i].mesh.RotationMatrix = glm::quat(trans.getRotation().getX(), trans.getRotation().getY(), trans.getRotation().getZ(), trans.getRotation().getW());
+			if (trans.getOrigin().getX() < -5 && i != 0)Bodies[i]->setLinearVelocity(btVector3(5, 0, 0));
+			if (trans.getOrigin().getX()> 5 && i != 0)Bodies[i]->setLinearVelocity(btVector3(-5, 0, 0));
+}
 
-	for (int i = 0; i < offObjects.size(); i++){
+		int numManifolds = dynamicsWorld->getDispatcher()->getNumManifolds();
+		for (int i = 0; i<numManifolds; i++)
+		{
+			btPersistentManifold* contactManifold = dynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
+			btCollisionObject* obA = (btCollisionObject*)(contactManifold->getBody0());
+			btCollisionObject* obB = (btCollisionObject*)(contactManifold->getBody1());
+
+			int numContacts = contactManifold->getNumContacts();
+			for (int j = 0; j<numContacts; j++)
+			{
+				btManifoldPoint& pt = contactManifold->getContactPoint(j);
+				if (pt.getDistance()<0.f)
+				{
+					if (obA == Bodies[0] || obB == Bodies[0]){ std::cout << "Collololol" << std::endl; }
+					else{ std::cout << "otros" << std::endl; }
+					
+					const btVector3& ptA = pt.getPositionWorldOnA();
+					const btVector3& ptB = pt.getPositionWorldOnB();
+					const btVector3& normalOnB = pt.m_normalWorldOnB;
+				}
+			}
+		}
+		
+		
+		for (int i = 0; i < offObjects.size(); i++){
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::scale(glm::vec3(offObjects[i].Scaling[0], offObjects[i].Scaling[1], offObjects[i].Scaling[2])) * glm::translate(model, offObjects[i].mesh.DisplacementVector)* glm::mat4_cast(offObjects[i].mesh.RotationMatrix);
 		//model = glm::translate(model, offObjects[i].mesh.DisplacementVector);
@@ -615,10 +661,7 @@ if (SDL_Init( SDL_INIT_AUDIO) < 0)
 		
 			}
 		
-
-		
-
-		frameCount++;
+	frameCount++;
 		frameDTime += dt;
 		if (frameDTime>1.0)
 		{
@@ -630,8 +673,7 @@ if (SDL_Init( SDL_INIT_AUDIO) < 0)
 		}
 
 
-
-		TwDraw();
+			TwDraw();
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
